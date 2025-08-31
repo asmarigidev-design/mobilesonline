@@ -1,13 +1,426 @@
-body {
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'vazir' !important;
+  box-sizing: border-box;  
+  margin: 0; /* حاشیه‌های پیش‌فرض را حذف کنید */  
+  padding: 0; /* پدینگ‌های پیش‌فرض را حذف کنید */ 
+}
+body {
+  direction: rtl;
+  font-family: 'vazir' !important;
+  background: linear-gradient(45deg, #ffffff, #c6c1ff);
+overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.main-website {  
+  display: flex; /* یا display: grid; */  
+  flex-wrap: wrap; /* اطمینان از شکستن سطرها در صورت نیاز */  
+  width: 100%;  
+}  
+
+.component {  
+  flex: 1 1 auto; /* اجازه به کامپوننت‌ها برای اندازه‌گیری خود */  
 }
+
+header{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+a{
+  letter-spacing: 2px;
+  color: #a04811;
+}
+a:hover{
+  color: rgb(87, 212, 243);
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li{
+  margin-left: 20px;
+}
+
+
+.menu{
+  display: none;
+}
+
+.products{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  
+}
+
+.products .card{
+  flex: 0 0 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  background: #fff;
+  box-shadow: 0 0 5px #ccc;
+  padding: 15px;
+  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+
+}
+
+.card img{
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  display: block;
+
+}
+
+.card .box{
+  margin: 15px 0;
+  
+}
+
+
+.card .box p{
+  margin: 10px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #686868;
+}
+
+
+.card .box h4{
+  color: crimson;
+}
+
+.card .box button{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #271a3ceb;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+
+}
+
+
+.cart-icon{
+  position: relative;
+  margin-right: 35px;
+  margin-top: 10px;
+}
+
+.cart-icon span{
+  background: crimson;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: #fff;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 10px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* detail */
+
+.details {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1200px; /* حداکثر عرض برای مرکز بودن */
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .details {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.close-btn {
+  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
+  top: 100px;             /* فاصله از بالا */
+  right: 10px;            /* فاصله از چپ */
+  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
+  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
+color: rgb(19, 5, 79);
+  border-radius: 10px; 
+  padding:10px;         /* بدون حاشیه */
+  cursor: pointer;       /* نشانگر موس */
+}
+
+
+.details .img-container{
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+  height: 400px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+
+}
+
+.details .img-container:hover{
+  background-size: 100%;
+  border: 1px solid #ddd;
+  cursor: zoom-in;
+    height:40vh;
+}
+
+.box-details{
+  max-width: 400px;
+  width: 100%;
+  margin: 10px;
+
+}
+
+.box-details h2{
+  color: darkblue;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+.box-details h3{
+  margin: 10px 0;
+}
+.box-details button{
+  border: 1px solid #271a3ceb;
+  cursor: pointer;
+  background: #271a3ceb;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+
+}
+.colors button{
+  width: 35px;
+  height: 35px;
+}
+
+.box-details p{
+  line-height: 1.5;
+  margin: 10px 0;
+  opacity: .8;
+}
+
+.box-details .thumb{
+  display: flex;
+  cursor: pointer;
+}
+
+.box-details .thumb img{
+  width: 50px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.box-details .cart{
+  width: 200px;
+  height: 35px;
+  letter-spacing: 2px;
+}
+
+
+
+
+
+
+@media (max-width: 1650px){
+  .container{
+    width: 100%;
+  }
+ 
+  
+  .component {  
+    flex: 1 1 auto; /* اجازه به کامپوننت‌ها برای اندازه‌گیری خود */  
+  }
+  .products .card{
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(30% - 5px);
+    margin-top: 35px;
+  }
+}
+@media (max-width: 1400px){
+  .container{
+  }
+ 
+  
+  .component {  
+    flex: 1 1 auto; /* اجازه به کامپوننت‌ها برای اندازه‌گیری خود */  
+  }
+  .products .card{
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin-top: 35px;
+  }
+}
+@media (max-width: 992px){
+  .container{
+    width: 960px
+  }
+  
+}
+@media (max-width: 768px){
+  .container{
+    width: 720px
+  }
+  header ul{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #cab9b7ba, #471c84b8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: .96;
+    z-index: 99;
+    transition: .5s ease-in;
+    -webkit-transition: .5s ease-in;
+    -moz-transition: .5s ease-in;
+    -ms-transition: .5s ease-in;
+    -o-transition: .5s ease-in;
+    
+}
+.products .card{
+  flex: 0 0 calc(100%);
+  max-width: calc(100%);
+  margin-top: 35px;
+}
+.menu{
+  display: block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+
+}
+@media (max-width: 576px){
+  .container{
+    width: 100%;
+  }
+  header{
+    justify-content: space-between;
+  }
+
+  .details{
+    padding: 0;
+  }
+  .box-details .thumb img{
+    width: 40px;
+  }
+  .details .img-container{
+    height: 350px;
+  }
+
+}
+
+
+
+
+/* cart */
+
+
+.cart{
+  position: relative;
+  border: 1px solid #ccc;
+  transform: scaleY(.98);
+  -webkit-transform: scaleY(.98);
+  -moz-transform: scaleY(.98);
+  -ms-transform: scaleY(.98);
+  -o-transform: scaleY(.98);
+}
+
+.cart .img-container:hover{
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.amount span{
+  color: crimson;
+  padding: 0 20px;
+}
+
+
+.amount .count{
+  width: 40px;
+  height: 30px;
+  border: 1px solid #555;
+  outline: none;
+  background: #271a3ceb;
+  cursor: pointer;
+}
+
+.delete{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.total{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.total a{
+  background: #271a3ceb;
+  color: white;
+  padding: 10px 25px;
+}
+
+.total h3{
+  background: #271a3ceb;
+  color: white;
+  padding: 10px 25px;
+}
+

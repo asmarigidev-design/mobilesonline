@@ -1,0 +1,72 @@
+.about-us-container {
+    padding: 50px;
+    background-color: #1a1a2e;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    margin-top: 7%;
+
+  }
+  
+  .about-us-container h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #a471ab;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 4%;
+  }
+  .content img{
+
+  }
+  .store-image {
+    transform: scale(1.25);
+    border-radius: 50%;
+  border-radius: 40%;  
+  height:20vh;
+  /* گرد کردن تصویر */
+  }
+  
+  .store-image:hover {
+  
+      border-radius: 15px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .text-content {
+    max-width: 50%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #a471ab;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #d1d1e9;
+  }
+  
+  .text-content p:nth-child(4) {
+    font-weight: bold;
+  }
+  
+  .text-content p:last-child {
+    font-style: italic;
+  }
+  
