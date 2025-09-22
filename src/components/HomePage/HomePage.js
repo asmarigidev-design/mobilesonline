@@ -14,11 +14,27 @@ import 'aos/dist/aos.css';
 // اسلایدر صفحه اصلی با پس‌زمینه و متن متحرک، تصویر ثابت – Homepage slider with animated background and text, static image
 
 const slides = [  
-  { image: image2, text: 'تجربه‌ی عالی از خرید موبایل آنلاین', bgColor: 'rgb(235, 71, 0)' },  
-  { image: image3, text: 'تخفیف‌های ویژه برای کاربران جدید', bgColor: 'rgb(45, 0, 243)' },  
-  { image: image4, text: 'پشتیبانی 24 ساعته و پاسخگویی سریع', bgColor:  'rgb(232, 220, 0)'},  
-  { image: image5, text: 'تحویل سریع و مطمئن در سراسر کشور', bgColor: 'rgb(0, 194, 48)' }  
-];  
+  { 
+    image: image2, 
+    text: 'تجربه‌ی عالی از خرید موبایل آنلاین', 
+    bgColor: 'rgb(36, 36, 66)' // سرمه‌ای تیره با حس مدرن و لوکس 
+  },  
+  { 
+    image: image3, 
+    text: 'تخفیف‌های ویژه برای کاربران جدید', 
+    bgColor: 'rgba(118, 52, 162, 1)' // بنفش سلطنتی دیجیتال 
+  },  
+  { 
+    image: image4, 
+    text: 'پشتیبانی 24 ساعته و پاسخگویی سریع', 
+    bgColor: 'rgba(179, 158, 135, 1)' // کرم طلایی ملایم برای حس گرم و حرفه‌ای 
+  },  
+  { 
+    image: image5, 
+    text: 'تحویل سریع و مطمئن در سراسر کشور', 
+    bgColor: 'rgb(0, 128, 128)' // سبز آبی عمیق و متعادل 
+  }  
+];
 
 function HomePage() {  
   useEffect(() => {  
@@ -54,7 +70,13 @@ function HomePage() {
  return (  
   <div>  
       {/* کانتینر اصلی اسلایدر با رنگ پس‌زمینه پویا از اسلاید فعلی – Main slider container with dynamic background color from current slide */}
-    <div className="slider-container" style={{ backgroundColor: slides[currentSlide].bgColor }}>  
+<div
+  className="slider-container"
+  style={{
+    backgroundColor: slides[currentSlide].bgColor,
+border: '5px solid white' // بنفش مه‌آلود – Misty purple border
+  }}
+>
           {/* حلقه برای رندر کردن هر اسلاید – Loop to render each slide */}
       {slides.map((slide, index) => (  
         <div className={`slide ${currentSlide === index ? 'active' : ''}`} key={index}>  
@@ -92,7 +114,7 @@ function HomePage() {
           {hovered[index] && (  
          <div className='card-content' data-aos="fade-up"> 
                    {/* لینک به صفحه مربوط به برند – Link to brand-specific page */} 
-         <a href={`/${['xiaomi', 'huawei', 'samsung', 'products'][index]}`} style={{ textDecoration: 'none', color: 'inherit' }}>  
+         <a href={`/${['products', 'products', 'products', 'products'][index]}`} style={{ textDecoration: 'none', color: 'inherit' }}>  
            <h3>{['Xiaomi', 'Huawei', 'Samsung', 'iPhone'][index]}</h3> 
                        {/* عنوان برند – Brand title */}
                                    {/* توضیح برند – Brand description */} 

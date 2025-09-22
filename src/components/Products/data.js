@@ -9,7 +9,7 @@ export const DATAPRODUCT = [
          ],
          "description": "این گوشی موبایل است و خیلی زیباست و جدیدترین محصول شرکت خوب ماست ",
          "content": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد",
-         "colors": ["red", "blue", "teal"],
+         "colors": ["red", "green", "teal"],
          "price": 180000,
          "count": 1
      },
@@ -19,6 +19,8 @@ export const DATAPRODUCT = [
          "images": [
              "http://localhost:3000/images/4.jpg",
              "http://localhost:3000/images/5.jpg",
+             "http://localhost:3000/images/1.jpg",
+
 
          ],
          "description": "این گوشی موبایل است و خیلی زیباست و جدیدترین محصول شرکت خوب ماست ",
@@ -74,6 +76,7 @@ export const DATAPRODUCT = [
         "title": "گوشی آیفون 7",
         "images": [
             "http://localhost:3000/images/4.jpg",
+            "http://localhost:3000/images/1.jpg",
             "http://localhost:3000/images/5.jpg",
 
         ],

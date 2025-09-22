@@ -1,72 +1,87 @@
 .about-us-container {
-    padding: 50px;
-    background-color: #1a1a2e;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    color: #fff;
-    margin-top: 7%;
+  padding: 60px 30px;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 5% auto;
+  color: #fff;
+  font-family: 'Vazirmatn', sans-serif;
+  height:90vh;
+}
 
-  }
-  
-  .about-us-container h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    color: #a471ab;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.store-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.store-image:hover {
+  transform: scale(1.05);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.text-content {
+  max-width: 600px;
+  text-align: right;
+}
+
+.text-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #d8cbffff;
+  letter-spacing: 1px;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: #f3eaff;
+}
+
+.text-content p:nth-child(4) {
+  font-weight: bold;
+  color: #d8cbffff;
+}
+
+.text-content p:last-child {
+  font-style: italic;
+  color: #f0f6f7e3;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
   .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 4%;
-  }
-  .content img{
-
-  }
-  .store-image {
-    transform: scale(1.25);
-    border-radius: 50%;
-  border-radius: 40%;  
-  height:20vh;
-  /* گرد کردن تصویر */
-  }
-  
-  .store-image:hover {
-  
-      border-radius: 15px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-  
-  .text-content {
-    max-width: 50%;
-    margin-top: 20px;
+    flex-direction: column;
     text-align: center;
   }
-  
+
+  .store-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .text-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
   .text-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #a471ab;
+    font-size: 2rem;
   }
-  
+
   .text-content p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #d1d1e9;
+    font-size: 1rem;
   }
-  
-  .text-content p:nth-child(4) {
-    font-weight: bold;
-  }
-  
-  .text-content p:last-child {
-    font-style: italic;
-  }
-  
+}

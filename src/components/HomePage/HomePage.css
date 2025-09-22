@@ -24,7 +24,8 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* سایه زیر اسلایدشو */  
   background-color: aqua; 
   background-size: cover;
-
+  background-position: center;
+  border:4px solid white;
 }  
 
 .cartbody {  
@@ -172,7 +173,16 @@
 
 .card-content button:hover {  
   background-color: #3f3245;  
-}  
+} 
+
+.details .img-containercart {
+  width: 100%;
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر – Prevent image repetition */
+}
+
 @media (max-width: 900px) {  
   .slide-text.bottom {  
     top: 30%;
@@ -221,16 +231,12 @@ flex-wrap: nowrap;
   
 }  
 
-@media (max-width: 490px) {  
+@media (max-width: 770px) {  
   .slider-container, .slider-containerr {  
-    flex-direction: column; /* چیدمان عمودی */  
-    height: auto; /* ارتفاع خودکار */  
- 
-
   }  
   .slide-text.bottom {  
-    top: 30%;
-    left: 20%;
+top: 30%;
+left: 20%;
 position: absolute;
 transform: translate(-50%, -50%);
 font-size: small;
@@ -250,7 +256,238 @@ font-size: small;
   }  
 
   .card-content button {  
-    font-size: 0.5rem; /* کاهش اندازه فونت دکمه */  
   }  
 
+
+
+
+
+
+  
+.close-btn {
+  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
+  top: 100px;             /* فاصله از بالا */
+  right: 10px;            /* فاصله از چپ */
+  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
+  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
+color: rgb(19, 5, 79);
+  border-radius: 10px; 
+  padding:10px;         /* بدون حاشیه */
+  cursor: pointer;       /* نشانگر موس */
 }
+
+
+.details .img-container{
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+  height: 400px;
+  background-position: center;
+  background-size: contain;
+
+}
+
+.details .img-container:hover{
+  background-size: 200%;
+  border: 1px solid #ddd;
+  cursor: zoom-in;
+    height:40vh;
+}
+
+
+.details .img-containercart {
+  width: 100%;
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر – Prevent image repetition */
+}
+
+
+
+
+.box-details{
+  max-width: 400px;
+  width: 100%;
+  margin: 10px;
+
+}
+
+.box-details h2{
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.box-details h3{
+  margin: 3px 0;
+}
+.box-details button{
+  border: 1px solid #271a3ceb;
+  cursor: pointer;
+  background: #271a3ceb;
+  color: #fff;
+  margin-left: 5px;
+  margin-top: 10px;
+  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+
+}
+.colors button{
+  width: 20px;
+  height: 20px;
+}
+
+.box-details p{
+  line-height: 1;
+  margin: 10px 0;
+  opacity: .8;
+
+}
+
+.box-details .thumb{
+  display: flex;
+  cursor: pointer;
+}
+
+.box-details .thumb img{
+  width: 0px;
+  margin: 10px;
+  overflow: hidden;
+}
+.box-details .thumb img {
+    width: 50px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.box-details .cart{
+  width: 200px;
+  height: 35px;
+  letter-spacing: 2px;
+}
+
+
+}
+
+
+
+
+@media (max-width: 400px) {  
+
+  .product-details{
+  background-color: #ffffffff;  
+
+}
+  .details{
+  background-color: #ffffffff;  
+
+}
+.slide-text.bottom {  
+top: 30%;
+left: 20%;
+position: absolute;
+transform: translate(-50%, -50%);
+font-size: small;
+
+  }  
+
+  .slide-image {  
+    width: 100%; /* عرض کامل برای موبایل */  
+  }  
+
+
+   .card-content p {  
+    font-size: 0.5rem; /* کاهش اندازه فونت پاراگراف */  
+  }  
+  .card-content p {  
+    font-size: 0.5rem; /* کاهش اندازه فونت پاراگراف */  
+  }  
+
+    .details {
+display:flex;
+flex-wrap:wrap;
+}
+
+
+
+  
+.close-btn {
+  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
+  top: 100px;             /* فاصله از بالا */
+  right: 10px;            /* فاصله از چپ */
+  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
+  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+  background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
+  color: rgb(19, 5, 79);
+  border-radius: 10px; 
+  padding:2px;         /* بدون حاشیه */
+  cursor: pointer;       /* نشانگر موس */
+}
+
+
+.details .img-container{
+  max-width: 400px;
+  width: 100%;
+  margin: 1px;
+  height: 400px;
+  background-position: center;
+  background-size: contain;
+
+}
+
+.details .img-container:hover{
+  background-size: 150%;
+  border: 1px solid #ddd;
+  cursor: zoom-in;
+    height:40vh;
+}
+
+.box-details{
+  max-width: 400px;
+  width:100%;
+  margin: 3px;
+}
+
+.box-details h2{
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+}
+.box-details h3{
+  margin: 3px 0;
+}
+.box-details button{
+  border: 1px solid #271a3ceb;
+  cursor: pointer;
+  background: #271a3ceb;
+  color: #fff;
+  margin-left: 0px;
+  margin-top: 3px;
+  border-radius: 10px; /* گوشه‌های گرد برای کل اسلایدشو */
+
+}
+.colors button{
+  width: 15px;
+  height: 15px;
+}
+
+.box-details p{
+  line-height: 1;
+  margin: 1px 0;
+  opacity: .8;
+}
+
+
+.box-details .thumb img {
+    width: 100%;
+    margin: 1px;
+    overflow: hidden;
+}
+
+.box-details .cart{
+  width: 100px;
+  height: 35px;
+  margin-bottom:5px;
+}
+
+
+}
+

@@ -13,8 +13,7 @@
 body {
   direction: rtl;
   font-family: 'vazir' !important;
-  background: linear-gradient(45deg, #ffffff, #c6c1ff);
-overflow-x: hidden;
+  background: linear-gradient(45deg,#beb0d2ff, #400c8ade);
 }
 
 
@@ -35,6 +34,9 @@ header{
   align-items: center;
   justify-content: space-around;
   margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px 20px;
+  border-radius: 0 0 5px 5px;
 }
 
 a{
@@ -42,7 +44,7 @@ a{
   color: #a04811;
 }
 a:hover{
-  color: rgb(87, 212, 243);
+  color: rgba(75, 61, 164, 1);
 }
 
 ul {
@@ -164,12 +166,113 @@ ul li{
   max-width: 1200px; /* حداکثر عرض برای مرکز بودن */
   background-color: #fff;
 }
+/* cart */
+
+
+.cart{
+  position: relative;
+  border: 1px solid #d7c3f3ff;
+  transform: scaleY(.98);
+  -webkit-transform: scaleY(.98);
+  -moz-transform: scaleY(.98);
+  -ms-transform: scaleY(.98);
+  -o-transform: scaleY(.98);
+  height:25vh;
+  width:70%;
+  border-radius:20px;
+}
+
+.box-detailscart{
+  height:20vh;
+}
+
+.amount span{
+  color: crimson;
+  padding: 0 20px;
+}
+
+
+.amount .count{
+  width: 40px;
+  height: 30px;
+  border: 1px solid #555;
+  outline: none;
+background-color: #1a237e;
+  cursor: pointer;
+}
+
+.delete{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  font-weight: 900;
+  color:#8b0000;
+}
+.total{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.total a{
+  background: #271a3ceb;
+  color: white;
+  padding: 10px 25px;
+    border-radius:15px;
+
+}
+
+.total h3{
+  background: #1a237e;
+  color: white;
+  padding: 10px 25px;
+  border-radius:15px;
+}
+
+.total button {
+background-color: #1a237e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Vazirmatn', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.total button:hover {
+  background-color: #388e3c; /* رنگ تیره‌تر در هاور */
+  transform: scale(0.98); /* افکت کوچک شدن */
+}
+
 
 @media (max-width: 768px) {
   .details {
-    flex-direction: column;
     text-align: center;
   }
+
+  .details {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1200px;
+    background-color: #fff;
+  }
+        .cart {
+        height: 25vh;
+        width: 80%;
+    }
 }
 
 
@@ -214,13 +317,14 @@ color: rgb(19, 5, 79);
   max-width: 400px;
   width: 100%;
   margin: 10px;
+    background-color: #ffffffff;  
+
 
 }
 
 .box-details h2{
-  color: darkblue;
+  color: #8b0000;
   letter-spacing: 2px;
-  font-size: 2rem;
 }
 .box-details h3{
   margin: 10px 0;
@@ -255,6 +359,8 @@ color: rgb(19, 5, 79);
   width: 50px;
   margin: 20px;
   overflow: hidden;
+    background-color: #ffffffff;  
+
 }
 
 .box-details .cart{
@@ -307,16 +413,16 @@ color: rgb(19, 5, 79);
   .container{
     width: 720px
   }
+
   header ul{
     position: fixed;
     top: 0;
     right: -100%;
-    width: 100%;
+    width: 60%;
     height: 100vh;
-    background: linear-gradient(45deg, #cab9b7ba, #471c84b8);
+    background: linear-gradient(45deg, #400c8ade, #beb0d2ff);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     opacity: .96;
     z-index: 99;
@@ -327,6 +433,40 @@ color: rgb(19, 5, 79);
     -o-transition: .5s ease-in;
     
 }
+li  {
+    display: block; /* برای گرفتن کل عرض والد */
+    width: 95%; /* عرض کامل */
+    height: 60px; /* ارتفاع ثابت */
+    line-height: 60px; /* برای وسط‌چین کردن متن عمودی */
+    background-color: #b1b1d0ff;
+    border-radius: 25px;
+    margin: 15px 16px; /* فقط افقی، چون ارتفاع ثابته */
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: center; /* وسط‌چین افقی */
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا */
+    white-space: nowrap; /* جلوگیری از رفتن به خط بعد */
+    text-overflow: ellipsis; /* اگر متن زیاد بود، سه‌نقطه */
+}
+
+li {
+    transition: all 0.3s ease; /* انیمیشن نرم برای تغییرات */
+}
+
+li:hover {
+    background-color: #ffffffcb;
+    color: #000;
+    transform: scale(0.85); /* کمی کوچک‌تر شدن */
+}
+li a:hover {
+    background-color: #ffffffcb;
+    color: #000;
+    transform: scale(0.85); /* کمی کوچک‌تر شدن */
+}
+
 .products .card{
   flex: 0 0 calc(100%);
   max-width: calc(100%);
@@ -336,6 +476,8 @@ color: rgb(19, 5, 79);
   display: block;
   cursor: pointer;
   margin: 10px;
+      text-align: center; /* وسط‌چین افقی */
+
 }
 
 
@@ -351,8 +493,12 @@ color: rgb(19, 5, 79);
 
   .details{
     padding: 0;
+      background-color: #ffffffff;  
+
   }
   .box-details .thumb img{
+      background-color: #ffffffff;  
+
     width: 40px;
   }
   .details .img-container{
@@ -361,66 +507,23 @@ color: rgb(19, 5, 79);
 
 }
 
-
-
-
-/* cart */
-
-
+@media (max-width: 700px){
+.box-details h2 {
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
 .cart{
-  position: relative;
-  border: 1px solid #ccc;
-  transform: scaleY(.98);
-  -webkit-transform: scaleY(.98);
-  -moz-transform: scaleY(.98);
-  -ms-transform: scaleY(.98);
-  -o-transform: scaleY(.98);
+  height:25vh;
+  width:80%;
 }
-
-.cart .img-container:hover{
-  background-size: 100%;
-  cursor: pointer;
 }
-
-.amount span{
-  color: crimson;
-  padding: 0 20px;
+@media (max-width: 459px){
+.box-details h2 {
+    letter-spacing: 2px;
+    font-size: 1rem;
 }
-
-
-.amount .count{
-  width: 40px;
-  height: 30px;
-  border: 1px solid #555;
-  outline: none;
-  background: #271a3ceb;
-  cursor: pointer;
+.cart{
+  height:35vh;
+  width:90%;
 }
-
-.delete{
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  cursor: pointer;
-  font-weight: 900;
 }
-.total{
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.total a{
-  background: #271a3ceb;
-  color: white;
-  padding: 10px 25px;
-}
-
-.total h3{
-  background: #271a3ceb;
-  color: white;
-  padding: 10px 25px;
-}
-

@@ -8,102 +8,74 @@ import { FaTelegramPlane, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 // کارت مشاور با تصویر قابل کلیک و افکت فعال‌سازی – Support Card with Clickable Image and Activation Effect
 
+const advisors = [
+  {
+    id: 1,
+    name: 'علی محمدی',
+    title: 'مشاوره رایگان خریدموبایل',
+    description: 'مشاور فروش و بازاریابی آنلاین با 5 سال تجربه',
+    image: img1,
+  },
+  {
+    id: 2,
+    name: 'امیر پیری',
+    title: 'تعمیرکار تخصصی موبایل',
+    description: 'با بیش از ده سال تجربه در تعمیرات تخصصی موبایل، آماده‌ام تا گوشی شما را به بهترین شکل تعمیر کنم.',
+    image: img2,
+  },
+  {
+    id: 3,
+    name: 'سهیل یوسفی',
+    title: 'مدیرخدمات پس از فروش',
+    description: 'مدیریت بازگشت وتعویض کالا,ارايه گارانتی وخدمات پس از فروش',
+    image: img6,
+  },
+];
+
 const IconImageToggle = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [activeId, setActiveId] = useState(null); // وضعیت فعال بودن هر کارت – Active card state
+
   // تغییر وضعیت فعال بودن کارت با کلیک – Toggle card activation on click
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const handleClick = (id) => {
+    setActiveId(prev => (prev === id ? null : id));
   };
 
   return (
-<div className='tog'>
+    <div className='tog'>
+      {advisors.map(advisor => (
+        <div key={advisor.id} className={`containeer${activeId === advisor.id ? ' active' : ''}`}>
+          {/* محفظه کارت با کلاس فعال در صورت کلیک – Card container with active class on click */}
+          <div className="wrapper">
+            <img
+              src={advisor.image}
+              alt="toggleable"
+              className={`${activeId === advisor.id ? 'active' : ''}`}
+              onClick={() => handleClick(advisor.id)}
+            />
+            {/* نام مشاور – Advisor name */}
+            <div className='title'>{advisor.name}</div>
+            {/* عنوان خدمات مشاوره – Support service title */}
+            <div className='place'>{advisor.title}</div>
+          </div>
 
-         {/* محفظه کارت با کلاس فعال در صورت کلیک – Card container with active class on click */}
-    <div className={`containeer${isActive ? ' active' : ''}`}>
-      <div className="wrapper">
-        <img 
-          src={img1}
-          alt="toggleable" 
-          className={`${isActive ? 'active' : ''}`}
-          onClick={handleClick}
-        />
-                  {/* نام مشاور – Advisor name */}
-        <div className='title'> علی محمدی </div>
-                  {/* عنوان خدمات مشاوره – Support service title */}
-        <div className='place'>مشاوره رایگان خریدموبایل </div>
-      </div>
-              {/* توضیحات مشاور – Advisor description */}
-<div className='contentt'>
-  <p>  مشاور فروش و بازاریابی آنلاین با 5 سال تجربه</p>
-  <div className='buttonn'>
-    <div className='btn'>
-<button>ارسال پیام</button>
-    </div>
+          {/* توضیحات مشاور – Advisor description */}
+          <div className='contentt'>
+            <p>{advisor.description}</p>
+            <div className='buttonn'>
+              <div className='btn'>
+                <button>ارسال پیام</button>
+              </div>
+            </div>
+          </div>
 
-  </div>
-  </div>    
-    <ul className={`icon${isActive ? ' active' : ''}`}>
-        <li><a href="/"> <FaInstagram /></a></li>
-        <li><a href="/"> <FaTelegramPlane /></a></li>
-        <li><a href="/"><FaWhatsapp /></a></li>
-      </ul>
+          <ul className={`icon${activeId === advisor.id ? ' active' : ''}`}>
+            <li><a href="/"> <FaInstagram /></a></li>
+            <li><a href="/"> <FaTelegramPlane /></a></li>
+            <li><a href="/"><FaWhatsapp /></a></li>
+          </ul>
+        </div>
+      ))}
     </div>
-    <div className={`containeer${isActive ? ' active' : ''}`}>
-      <div className="wrapper">
-        <img 
-          src={img2}
-          alt="toggleable" 
-          className={`${isActive ? 'active' : ''}`}
-          onClick={handleClick}
-        />
-        <div className='title'> امیر پیری </div>
-        <div className='place'> تعمیرکار تخصصی موبایل</div>
-      </div>
-<div className='contentt'>
-  <p>با بیش از ده سال تجربه در تعمیرات تخصصی موبایل، آماده‌ام تا گوشی شما را به بهترین شکل تعمیر کنم.</p>
-  <div className='buttonn'>
-          {/* دکمه ارسال پیام – Send message button */}
-    <div className='btn'>
-    <button>ارسال پیام</button>
-    </div>
-  </div>
-  </div>    
-    <ul className={`icon${isActive ? ' active' : ''}`}>
-        <li><a href="/"> <FaInstagram /></a></li>
-        <li><a href="/"> <FaTelegramPlane /></a></li>
-        <li><a href="/"><FaWhatsapp /></a></li>
-      </ul>
-    </div>
-
-    <div className={`containeer${isActive ? ' active' : ''}`}>
-      <div className="wrapper">
-        <img 
-          src={img6}
-          alt="toggleable" 
-          className={`${isActive ? 'active' : ''}`}
-          onClick={handleClick}
-        />
-        <div className='title'>سهیل یوسفی </div>
-        <div className='place'> مدیرخدمات پس از فروش</div>
-      </div>
-<div className='contentt'>
-  <p>مدیریت بازگشت وتعویض کالا,ارايه گارانتی وخدمات پس از فروش </p>
-  <div className='buttonn'>
-
-    <div className='btn'>
-    <button>ارسال پیام</button>
-    </div>
-  </div>
-  </div>  
-      <ul className={`icon${isActive ? ' active' : ''}`}>
-        <li><a href="/"> <FaInstagram /></a></li>
-        <li><a href="/"> <FaTelegramPlane /></a></li>
-        <li><a href="/"><FaWhatsapp /></a></li>
-      </ul>  
-    </div>
-    
-
-</div>
   );
 };
 

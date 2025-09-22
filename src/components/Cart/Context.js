@@ -1,76 +1,102 @@
-import React, { createContext, useEffect, useState } from 'react';  // ایمپورت ری‌اکت و هوک‌ها – Import React and hooks
-import { DATAPRODUCT } from '../Products/data';  // ایمپورت داده‌های اولیه محصولات – Import initial product data
-export const DataContext = createContext();  // ایجاد کانتکست برای اشتراک‌گذاری داده‌ها – Create context for data sharing
+import React, { createContext, useEffect, useState } from 'react'; // ایمپورت ری‌اکت و هوک‌ها
+import { DATAPRODUCT } from '../Products/data'; // ایمپورت داده‌های اولیه محصولات
+import Swal from 'sweetalert2'; // ایمپورت SweetAlert2 برای هشدارهای زیبا
+
+export const DataContext = createContext(); // ایجاد کانتکست برای اشتراک‌گذاری داده‌ها
 
 export const DataProvider = (props) => {
-    const [products, setProducts] = useState(DATAPRODUCT)  // وضعیت محصولات – Products state
-
-    const [cart, setCart] = useState([])  // وضعیت سبد خرید – Cart state
-
-    useEffect(() => {
-        const dataCart = JSON.parse(localStorage.getItem("dataCart"))
-        if (dataCart) setCart(dataCart)  // بارگذاری سبد خرید از localStorage – Load cart from localStorage
-    }, [])
+    const [products, setProducts] = useState(DATAPRODUCT); // وضعیت محصولات
+    const [cart, setCart] = useState([]); // وضعیت سبد خرید
 
     useEffect(() => {
-        localStorage.setItem("dataCart", JSON.stringify(cart))  // ذخیره سبد خرید در localStorage – Save cart to localStorage
-    }, [cart])
+        const dataCart = JSON.parse(localStorage.getItem("dataCart"));
+        if (dataCart) setCart(dataCart); // بارگذاری سبد خرید از localStorage
+    }, []);
 
-    const addCart = (id) => {
-        const check = cart.every(item => {
-            return item._id !== id
-        })
-        if (check) {
-            const data = products.filter(product => {
-                return product._id === id
-            })
-            setCart([...cart, ...data])  // افزودن محصول جدید به سبد – Add new product to cart
-        } else {
-            alert("این محصول در سبد خرید موجود است.")  // هشدار وجود محصول – Alert if product already in cart
-        }
+    useEffect(() => {
+        localStorage.setItem("dataCart", JSON.stringify(cart)); // ذخیره سبد خرید در localStorage
+    }, [cart]);
+
+const addCart = (id, selectedImage) => {
+  const check = cart.every(item => !(item._id === id && item.selectedImage === selectedImage));
+  if (check) {
+    const data = products.filter(product => product._id === id);
+    if (data.length > 0) {
+      const product = {
+        ...data[0],
+        selectedImage: selectedImage || data[0].images[0],
+        count: 1
+      };
+      setCart([...cart, product]);
     }
+  } else {
+    Swal.fire({
+      icon: 'warning',
+      title: 'محصول تکراری',
+      text: 'این ترکیب از محصول و تصویر در سبد خرید موجود است.',
+      confirmButtonText: 'باشه'
+    });
+  }
+};
+
+
 
     const increase = (id) => {
-        cart.forEach(item => {
+        const updatedCart = cart.map(item => {
             if (item._id === id) {
-                item.count += 1;  // افزایش تعداد محصول – Increase product quantity
+                return { ...item, count: item.count + 1 }; // افزایش تعداد محصول
             }
-        })
-        setCart([...cart])
-    }
+            return item;
+        });
+        setCart(updatedCart);
+    };
 
     const decrease = (id) => {
-        cart.forEach(item => {
+        const updatedCart = cart.map(item => {
             if (item._id === id) {
-                item.count === 1 ? item.count = 1 : item.count -= 1;  // جلوگیری از کاهش زیر ۱ – Prevent quantity below 1
+                const newCount = item.count > 1 ? item.count - 1 : 1;
+                return { ...item, count: newCount }; // جلوگیری از کاهش زیر ۱
             }
-        })
-        setCart([...cart])
-    }
+            return item;
+        });
+        setCart(updatedCart);
+    };
 
     const removeProduct = (id) => {
-        if (window.confirm("آیا از حذف محصول مطمئنید؟")) {
-            cart.forEach((item, index) => {
-                if (item._id === id) {
-                    cart.splice(index, 1)  // حذف محصول از آرایه – Remove product from array
-                }
-            })
-            setCart([...cart])
-        }
-    }
+        Swal.fire({
+            title: 'حذف محصول',
+            text: 'آیا از حذف محصول مطمئنید؟',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'بله، حذف شود',
+            cancelButtonText: 'خیر'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const updatedCart = cart.filter(item => item._id !== id); // حذف محصول از آرایه
+                setCart(updatedCart);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'محصول حذف شد',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    };
 
     const value = {
         products: [products, setProducts],
         cart: [cart, setCart],
-        addCart: addCart,
-        increase: increase,
-        decrease: decrease,
-        removeProduct: removeProduct,
-    }
+        addCart,
+        increase,
+        decrease,
+        removeProduct,
+    };
 
     return (
-        <DataContext.Provider value={value}> {/* فراهم‌سازی داده‌ها برای کامپوننت‌های فرزند – Provide data to child components*/}
+        <DataContext.Provider value={value}>
+            {/* فراهم‌سازی داده‌ها برای کامپوننت‌های فرزند */}
             {props.children}
         </DataContext.Provider>
-    )
-}
+    );
+};
