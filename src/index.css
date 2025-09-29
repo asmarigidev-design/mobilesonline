@@ -7,24 +7,24 @@
   box-sizing: border-box;
   font-family: 'vazir' !important;
   box-sizing: border-box;  
-  margin: 0; /* حاشیه‌های پیش‌فرض را حذف کنید */  
-  padding: 0; /* پدینگ‌های پیش‌فرض را حذف کنید */ 
+  margin: 0; 
+  padding: 0; 
 }
 body {
   direction: rtl;
   font-family: 'vazir' !important;
-  background: linear-gradient(45deg,#beb0d2ff, #400c8ade);
+  background: linear-gradient(45deg,#94c973, #76b947);
 }
 
 
 .main-website {  
-  display: flex; /* یا display: grid; */  
-  flex-wrap: wrap; /* اطمینان از شکستن سطرها در صورت نیاز */  
+  display: flex; 
+  flex-wrap: wrap; 
   width: 100%;  
 }  
 
 .component {  
-  flex: 1 1 auto; /* اجازه به کامپوننت‌ها برای اندازه‌گیری خود */  
+  flex: 1 1 auto; 
 }
 
 header{
@@ -41,7 +41,9 @@ header{
 
 a{
   letter-spacing: 2px;
-  color: #a04811;
+  color: #2f5233
+
+;
 }
 a:hover{
   color: rgba(75, 61, 164, 1);
@@ -75,9 +77,9 @@ ul li{
   flex: 0 0 calc(25% - 20px);
   max-width: calc(25% - 20px);
   background: #fff;
-  box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #b1d8b7;
   padding: 15px;
-  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+  border-radius: 20px; 
 
 }
 
@@ -102,7 +104,7 @@ ul li{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  color: #686868;
+  color: #2f5233;
 }
 
 
@@ -114,14 +116,14 @@ ul li{
   width: 100%;
   border: none;
   outline: none;
-  background: #271a3ceb;
+  background: #2f5233;
   color: #fff;
   text-align: center;
   padding: 10px 0;
   margin: 10px 0;
   cursor: pointer;
   letter-spacing: 2px;
-  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+  border-radius: 20px; 
 
 }
 
@@ -163,7 +165,7 @@ ul li{
   padding: 20px;
   margin: 0 auto;
   box-sizing: border-box;
-  max-width: 1200px; /* حداکثر عرض برای مرکز بودن */
+  max-width: 1200px; 
   background-color: #fff;
 }
 /* cart */
@@ -197,7 +199,7 @@ ul li{
   height: 30px;
   border: 1px solid #555;
   outline: none;
-background-color: #1a237e;
+ background-color: #2f5233;
   cursor: pointer;
 }
 
@@ -226,14 +228,14 @@ background-color: #1a237e;
 }
 
 .total h3{
-  background: #1a237e;
+  background: #2f5233;
   color: white;
   padding: 10px 25px;
   border-radius:15px;
 }
 
 .total button {
-background-color: #1a237e;
+background-color: #2f5233;
   color: white;
   border: none;
   border-radius: 25px;
@@ -247,8 +249,8 @@ background-color: #1a237e;
 }
 
 .total button:hover {
-  background-color: #388e3c; /* رنگ تیره‌تر در هاور */
-  transform: scale(0.98); /* افکت کوچک شدن */
+  background-color: #388e3c; 
+  transform: scale(0.98); 
 }
 
 
@@ -277,16 +279,16 @@ background-color: #1a237e;
 
 
 .close-btn {
-  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
-  top: 100px;             /* فاصله از بالا */
-  right: 10px;            /* فاصله از چپ */
-  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
-  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+  position: fixed;  
+  top: 100px;           
+  right: 10px;         
+  z-index: 1000;       
+  font-size: 1.5rem;     
 background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
 color: rgb(19, 5, 79);
   border-radius: 10px; 
-  padding:10px;         /* بدون حاشیه */
-  cursor: pointer;       /* نشانگر موس */
+  padding:10px;      
+  cursor: pointer; 
 }
 
 
@@ -323,7 +325,7 @@ color: rgb(19, 5, 79);
 }
 
 .box-details h2{
-  color: #8b0000;
+  color: #2f5233;
   letter-spacing: 2px;
 }
 .box-details h3{
@@ -336,7 +338,7 @@ color: rgb(19, 5, 79);
   color: #fff;
   margin-left: 10px;
   margin-top: 10px;
-  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+  border-radius: 20px; 
 
 }
 .colors button{
@@ -420,7 +422,7 @@ color: rgb(19, 5, 79);
     right: -100%;
     width: 60%;
     height: 100vh;
-    background: linear-gradient(45deg, #400c8ade, #beb0d2ff);
+    background: linear-gradient(45deg, #2f5233, #94c973);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -434,37 +436,37 @@ color: rgb(19, 5, 79);
     
 }
 li  {
-    display: block; /* برای گرفتن کل عرض والد */
-    width: 95%; /* عرض کامل */
-    height: 60px; /* ارتفاع ثابت */
-    line-height: 60px; /* برای وسط‌چین کردن متن عمودی */
-    background-color: #b1b1d0ff;
+    display: block; 
+    width: 95%; 
+    height: 60px; 
+    line-height: 60px;
+    background-color: #b1d8b7;
     border-radius: 25px;
-    margin: 15px 16px; /* فقط افقی، چون ارتفاع ثابته */
+    margin: 15px 16px; 
     text-decoration: none;
     color: #333;
     font-weight: 500;
     letter-spacing: 1.5px;
-    text-align: center; /* وسط‌چین افقی */
+    text-align: center; 
     transition: background-color 0.3s ease;
-    overflow: hidden; /* جلوگیری از بیرون‌زدگی محتوا */
-    white-space: nowrap; /* جلوگیری از رفتن به خط بعد */
-    text-overflow: ellipsis; /* اگر متن زیاد بود، سه‌نقطه */
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis; 
 }
 
 li {
-    transition: all 0.3s ease; /* انیمیشن نرم برای تغییرات */
+    transition: all 0.3s ease; 
 }
 
 li:hover {
     background-color: #ffffffcb;
     color: #000;
-    transform: scale(0.85); /* کمی کوچک‌تر شدن */
+    transform: scale(0.85); 
 }
 li a:hover {
     background-color: #ffffffcb;
     color: #000;
-    transform: scale(0.85); /* کمی کوچک‌تر شدن */
+    transform: scale(0.85); 
 }
 
 .products .card{
@@ -476,7 +478,8 @@ li a:hover {
   display: block;
   cursor: pointer;
   margin: 10px;
-      text-align: center; /* وسط‌چین افقی */
+  text-align: center; 
+  color:#2f5233;
 
 }
 

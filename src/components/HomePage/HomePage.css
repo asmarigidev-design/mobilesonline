@@ -5,11 +5,11 @@
   position: relative;  
   overflow: hidden;  
   width: 90%;  
-  height: 40vh; /* ارتفاع کل صفحه */  
+  height: 40vh; 
   margin: 0 auto;  
   display: flex;  
-  border-radius: 30px; /* گوشه‌های گرد برای کل اسلایدشو */  
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* سایه زیر اسلایدشو */  
+  border-radius: 30px;  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
   background-color: aqua;  
 }  
 
@@ -17,36 +17,37 @@
   position: relative;  
   overflow: hidden;  
   width: 20%;  
-  height: 45vh; /* ارتفاع کل صفحه */  
+  height: 45vh;
   margin: 0 auto;  
   display: flex;  
-  border-radius: 40px; /* گوشه‌های گرد برای کل اسلایدشو */  
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* سایه زیر اسلایدشو */  
+  border-radius: 40px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
   background-color: aqua; 
   background-size: cover;
   background-position: center;
-  border:4px solid white;
+  border:4px solid #b1d8b7
+
+;
 }  
 
 .cartbody {  
   margin-top: 2%;  
-  
   display: flex;  
   align-items: center;  
   justify-content: center;  
-  flex-wrap: wrap; /* اجازه به اجزا برای چیدمان چند خطی */  
+  flex-wrap: wrap; 
 }  
 
 .slide {  
   display: none;  
   align-items: center;  
   justify-content: center;  
-  height: 100%; /* ارتفاع کل */  
-  width: 100%; /* عرض کل */  
-  position: absolute; /* موقعیت مطلق */  
+  height: 100%; 
+  width: 100%; 
+  position: absolute; 
   top: 0;  
   left: 0;  
-  transition: opacity 1s ease-in-out; /* جابه‌جایی نرم */  
+  transition: opacity 1s ease-in-out; 
 }  
 
 .slide.active {  
@@ -55,50 +56,48 @@
 }  
 
 .slide-image {  
-  width: 60%; /* عرض 60% */  
-  height: 100%; /* ارتفاع 100% */  
-  object-fit: cover; /* تطبیق اندازه تصویر */  
-  filter: brightness(0.5); /* تیره کردن تصویر */  
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* انیمیشن نرم */  
+  width: 60%; 
+  height: 100%; 
+  object-fit: cover;  
+  filter: brightness(0.5); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }  
 
 .slide-text {  
-  color: #fff;  
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* سایه برای متن */  
+  color: #b1d8b7;  
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   
 }  
 
 .slide-text.top {  
   margin-right: 0%;  
-  bottom: 70%; /* فاصله از پایین */  
+  bottom: 70%; 
   display: none;
   flex-wrap: nowrap;
 }  
 .slide-text.bottom {  
-  bottom: 70%; /* فاصله از پایین */   
+  bottom: 70%;   
   top: 30%;  
   left: 25%;  
   position: absolute;  
   transform: translate(-50%, -50%);  
   font-size: xx-large;  
-  color: rgb(255, 255, 255); /* رنگ متن سفید */  
-  
-  /* افزودن سایه به متن */  
-  text-shadow: 0px 2px 4px rgb(0, 0, 0); /* سایه سفید */  
+  color:#b1d8b7; 
+  text-shadow: 0px 2px 4px rgb(0, 0, 0); 
 }
 .dots {  
   position: absolute;  
-  bottom: 20px; /* فاصله از پایین */  
+  bottom: 20px;  
   left: 50%;  
   transform: translateX(-50%);  
   display: flex;  
-  gap: 10px; /* فاصله بین نقاط */  
+  gap: 10px; 
 }  
 
 .dot {  
   width: 15px;  
   height: 15px;  
   border-radius: 50%;  
-  background-color: #efe6e6;  
+  background-color: #b1d8b7;  
   cursor: pointer;  
 }  
 
@@ -131,12 +130,12 @@
 }  
 
 .slide-text {  
-  color: transparent; /* رنگ متن را به شفاف تغییر دهید */  
-  animation: slide-up  ease forwards; /* انیمیشن را اضافه کنید */  
+  color: transparent;  
+  animation: slide-up  ease forwards;
 }  
 
 .slide-text.bottom {  
-  animation-delay: 0.5s; /* تاخیر برای انیمیشن متن پایین */  
+  animation-delay: 0.5s;
 }
 .card-content {  
   display: flex;  
@@ -144,7 +143,7 @@
   justify-content: center;  
   align-items: center;  
   text-align: center;  
-  background: rgba(166, 106, 190, 0.382); /* پس‌زمینه نیمه شفاف برای متن */  
+  background: rgba(65, 159, 96, 0.22);
   border-radius: 15px;  
   box-shadow: 0 4px 15px rgba(114, 114, 114, 0.5);  
 }  
@@ -152,27 +151,32 @@
 .card-content h3 {  
   margin-bottom: 10px;  
   font-size: 1.5rem;  
-  color: #ffffff;
+  color: #b1d8b7
+
+;
 
 }  
 
 .card-content p {  
   margin-bottom: 20px;  
-  color: #ffffff;
+  color: #c1e2c6ff
+
+;
 
 }  
 
 .card-content button {  
   border: none;  
-  background-color: #370148;  
+  background-color: #2f5233;  
   color: #a7a79b;  
   font-size: 1.5rem;  
   cursor: pointer;  
   border-radius: 5px;  
+  padding:3px;
 }  
 
 .card-content button:hover {  
-  background-color: #3f3245;  
+  background-color: #94c973;  
 } 
 
 .details .img-containercart {
@@ -180,13 +184,13 @@
   height: 100px;
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر – Prevent image repetition */
+  background-repeat: no-repeat; 
 }
 
 @media (max-width: 900px) {  
-  .slide-text.bottom {  
-    top: 30%;
-    left: 20%;
+.slide-text.bottom {  
+top: 30%;
+left: 20%;
 position: absolute;
 transform: translate(-50%, -50%);
 font-size: x-large;
@@ -195,18 +199,18 @@ font-size: x-large;
 
 /* مدیا کوئری برای سایزهای مختلف */  
 @media (max-width: 768px) {  
-  .slider-container, .slider-containerr {  
-    width: 90%; /* افزایش عرض برای تبلت‌ها و موبایل‌ها */  
-    height: 35vh; /* کاهش ارتفاع برای فضا */  
+.slider-container, .slider-containerr {  
+ width: 90%; 
+ height: 35vh; 
   margin-top: 3%;
   }  
 
   .slide-image {  
-    width: 80%; /* عرض تصویر برای موبایل */  
+    width: 80%; 
   }  
 
   .slide-text {  
-    font-size: 1rem; /* تغییر اندازه فونت */  
+    font-size: 1rem; 
   }  
 
   .dot {  
@@ -215,7 +219,7 @@ font-size: x-large;
   }  
   .slide-text.top {  
     margin-right: 0%;  
-    bottom: 70%; /* فاصله از پایین */  
+    bottom: 70%; 
     display: none;
     
   }  
@@ -244,15 +248,15 @@ font-size: small;
   }  
 
   .slide-image {  
-    width: 100%; /* عرض کامل برای موبایل */  
+    width: 100%;  
   }  
 
   .card-content h3 {  
-    font-size: 1.2rem; /* کاهش اندازه فونت عنوان */  
+    font-size: 1.2rem;  
   }  
 
   .card-content p {  
-    font-size: 1rem; /* کاهش اندازه فونت پاراگراف */  
+    font-size: 1rem;  
   }  
 
   .card-content button {  
@@ -265,16 +269,16 @@ font-size: small;
 
   
 .close-btn {
-  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
-  top: 100px;             /* فاصله از بالا */
-  right: 10px;            /* فاصله از چپ */
-  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
-  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+  position: fixed;       
+  top: 100px;            
+  right: 10px;       
+  z-index: 1000;        
+  font-size: 1.5rem; 
 background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
 color: rgb(19, 5, 79);
   border-radius: 10px; 
-  padding:10px;         /* بدون حاشیه */
-  cursor: pointer;       /* نشانگر موس */
+  padding:10px;     
+  cursor: pointer;    
 }
 
 
@@ -301,7 +305,7 @@ color: rgb(19, 5, 79);
   height: 100px;
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر – Prevent image repetition */
+  background-repeat: no-repeat; 
 }
 
 
@@ -328,7 +332,7 @@ color: rgb(19, 5, 79);
   color: #fff;
   margin-left: 5px;
   margin-top: 10px;
-  border-radius: 20px; /* گوشه‌های گرد برای کل اسلایدشو */
+  border-radius: 20px; 
 
 }
 .colors button{
@@ -391,15 +395,15 @@ font-size: small;
   }  
 
   .slide-image {  
-    width: 100%; /* عرض کامل برای موبایل */  
+    width: 100%;
   }  
 
 
    .card-content p {  
-    font-size: 0.5rem; /* کاهش اندازه فونت پاراگراف */  
+    font-size: 0.5rem; 
   }  
   .card-content p {  
-    font-size: 0.5rem; /* کاهش اندازه فونت پاراگراف */  
+    font-size: 0.5rem;
   }  
 
     .details {
@@ -411,16 +415,16 @@ flex-wrap:wrap;
 
   
 .close-btn {
-  position: fixed;       /* موقعیت ثابت نسبت به صفحه */
-  top: 100px;             /* فاصله از بالا */
-  right: 10px;            /* فاصله از چپ */
-  z-index: 1000;         /* مطمئن شو روی همه عناصر دیده بشه */
-  font-size: 1.5rem;     /* اندازه آیکون یا متن */
+  position: fixed;     
+  top: 100px;            
+  right: 10px;        
+  z-index: 1000;  
+  font-size: 1.5rem;  
   background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
   color: rgb(19, 5, 79);
   border-radius: 10px; 
-  padding:2px;         /* بدون حاشیه */
-  cursor: pointer;       /* نشانگر موس */
+  padding:2px;    
+  cursor: pointer; 
 }
 
 
@@ -461,7 +465,7 @@ flex-wrap:wrap;
   color: #fff;
   margin-left: 0px;
   margin-top: 3px;
-  border-radius: 10px; /* گوشه‌های گرد برای کل اسلایدشو */
+  border-radius: 10px;
 
 }
 .colors button{

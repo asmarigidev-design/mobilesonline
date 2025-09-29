@@ -74,7 +74,7 @@ function HomePage() {
   className="slider-container"
   style={{
     backgroundColor: slides[currentSlide].bgColor,
-border: '5px solid white' // بنفش مه‌آلود – Misty purple border
+border: '5px solid #b1d8b7 ' // بنفش مه‌آلود – Misty purple border
   }}
 >
           {/* حلقه برای رندر کردن هر اسلاید – Loop to render each slide */}

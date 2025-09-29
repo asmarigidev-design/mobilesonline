@@ -3,7 +3,7 @@
   border-radius: 20px;
   max-width: 1200px;
   margin: 5% auto;
-  color: #fff;
+  color: #b1d8b7;
   font-family: 'Vazirmatn', sans-serif;
   height:90vh;
 }
@@ -39,7 +39,7 @@
 .text-content h2 {
   font-size: 2.8rem;
   margin-bottom: 25px;
-  color: #d8cbffff;
+  color: #2f5233;
   letter-spacing: 1px;
 }
 
@@ -47,17 +47,17 @@
   font-size: 1.2rem;
   margin-bottom: 18px;
   line-height: 1.8;
-  color: #f3eaff;
+  color: #2f5233;
 }
 
 .text-content p:nth-child(4) {
   font-weight: bold;
-  color: #d8cbffff;
+  color: #2f5233;
 }
 
 .text-content p:last-child {
   font-style: italic;
-  color: #f0f6f7e3;
+  color: #2f5233;
 }
 
 /* ریسپانسیو برای موبایل */
