@@ -13,7 +13,7 @@
 body {
   direction: rtl;
   font-family: 'vazir' !important;
-  background: linear-gradient(45deg,#94c973, #76b947);
+  background: linear-gradient(45deg,#94c973, #b1d8b7);
 }
 
 
@@ -284,7 +284,9 @@ background-color: #2f5233;
   right: 10px;         
   z-index: 1000;       
   font-size: 1.5rem;     
-background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
+background: linear-gradient(45deg, #d0cfd8f8, #2f5233
+
+);
 color: rgb(19, 5, 79);
   border-radius: 10px; 
   padding:10px;      
@@ -334,7 +336,7 @@ color: rgb(19, 5, 79);
 .box-details button{
   border: 1px solid #271a3ceb;
   cursor: pointer;
-  background: #271a3ceb;
+  background: #2f5233;
   color: #fff;
   margin-left: 10px;
   margin-top: 10px;
@@ -347,6 +349,7 @@ color: rgb(19, 5, 79);
 }
 
 .box-details p{
+  color:#2f5233;
   line-height: 1.5;
   margin: 10px 0;
   opacity: .8;
