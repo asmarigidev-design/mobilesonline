@@ -3,7 +3,7 @@
   position: relative;  
   overflow: hidden;  
   width: 90%;  
-  height: 40vh; 
+  height: 50vh; 
   margin: 0 auto;  
   display: flex;  
   border-radius: 30px;  
@@ -15,7 +15,7 @@
   position: relative;  
   overflow: hidden;  
   width: 20%;  
-  height: 45vh;
+  height: 40vh;
   margin: 0 auto;  
   display: flex;  
   border-radius: 40px; 
@@ -154,7 +154,6 @@
 }  
 
 .card-content p {  
-  margin-bottom: 20px;  
   color: #c1e2c6ff
 
 ;
@@ -227,14 +226,15 @@ transform: translate(-50%, -50%);
 font-size: medium;
 flex-wrap: nowrap;
 
-  }  
+  } 
+
   
 }  
 
 @media (max-width: 770px) {  
-  .slider-container, .slider-containerr {  
-  }  
-  .slide-text.bottom {  
+.slider-container, .slider-containerr {  
+}  
+.slide-text.bottom {  
 top: 30%;
 left: 20%;
 position: absolute;
@@ -257,13 +257,6 @@ font-size: small;
 
   .card-content button {  
   }  
-
-
-
-
-
-
-  
 .close-btn {
   position: fixed;       
   top: 23%;            

@@ -462,14 +462,12 @@ li {
 }
 
 li:hover {
-    background-color: #ffffffcb;
-    color: #000;
     transform: scale(0.85); 
 }
+
 li a:hover {
-    background-color: #ffffffcb;
-    color: #000;
     transform: scale(0.85); 
+    cursor:pointer;
 }
 
 .products .card{
