@@ -3,7 +3,7 @@
   position: relative;  
   overflow: hidden;  
   width: 90%;  
-  height: 50vh; 
+  height: 40vh; 
   margin: 0 auto;  
   display: flex;  
   border-radius: 30px;  
@@ -266,12 +266,12 @@ font-size: small;
   
 .close-btn {
   position: fixed;       
-  top: 100px;            
+  top: 23%;            
   right: 10px;       
   z-index: 1000;        
   font-size: 1.5rem; 
-background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
-color: rgb(19, 5, 79);
+  background: linear-gradient(45deg, #d0cfd8f8, #2f5233);
+  color: rgb(19, 5, 79);
   border-radius: 10px; 
   padding:10px;     
   cursor: pointer;    
@@ -324,7 +324,6 @@ color: rgb(19, 5, 79);
 .box-details button{
   border: 1px solid #271a3ceb;
   cursor: pointer;
-  background: #271a3ceb;
   color: #fff;
   margin-left: 5px;
   margin-top: 10px;
@@ -416,7 +415,6 @@ flex-wrap:wrap;
   right: 10px;        
   z-index: 1000;  
   font-size: 1.5rem;  
-  background: linear-gradient(45deg, #d0cfd8f8, #8a81f2ff);
   color: rgb(19, 5, 79);
   border-radius: 10px; 
   padding:2px;    
@@ -457,7 +455,6 @@ flex-wrap:wrap;
 .box-details button{
   border: 1px solid #271a3ceb;
   cursor: pointer;
-  background: #271a3ceb;
   color: #fff;
   margin-left: 0px;
   margin-top: 3px;
