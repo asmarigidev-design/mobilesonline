@@ -154,6 +154,7 @@
 }  
 
 .card-content p {  
+  margin-bottom: 20px;  
   color: #c1e2c6ff
 
 ;
@@ -226,14 +227,13 @@ transform: translate(-50%, -50%);
 font-size: medium;
 flex-wrap: nowrap;
 
-  } 
-
+  }  
   
 }  
 
 @media (max-width: 770px) {  
-.slider-container, .slider-containerr {  
-}  
+  .slider-container, .slider-containerr {  
+  }  
 .slide-text.bottom {  
 top: 30%;
 left: 20%;
@@ -253,9 +253,6 @@ font-size: small;
 
   .card-content p {  
     font-size: 1rem;  
-  }  
-
-  .card-content button {  
   }  
 .close-btn {
   position: fixed;       
@@ -388,11 +385,8 @@ font-size: small;
 
 
    .card-content p {  
-    font-size: 0.5rem; 
-  }  
-  .card-content p {  
-    font-size: 0.5rem;
-  }  
+    font-size: 1rem; 
+  }   
 
     .details {
 display:flex;
@@ -403,8 +397,8 @@ flex-wrap:wrap;
 
   
 .close-btn {
-  position: fixed;     
-  top: 100px;            
+  position: fixed; 
+  top: 23%;            
   right: 10px;        
   z-index: 1000;  
   font-size: 1.5rem;  
